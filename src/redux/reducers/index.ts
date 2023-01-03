@@ -1,6 +1,5 @@
-// import mapReducer from './map.reducer'
+import mapReducer from './map.reducer'
 
-// export const stores = {
-// 	mapStore: mapReducer
-// }
-export {}
+export const stores = {
+	mapStore: mapReducer
+}

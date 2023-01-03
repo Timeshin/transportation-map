@@ -1,29 +1,37 @@
-// interface IInitialMapState {
-// 	mapMarkersCoords:
-// 	isLoading: boolean
-// }
+import MapActions from 'src/types/actions/mapActions.enum'
+import { MapReducerActions } from 'src/types/actions/mapActions.interface'
+import { InitialMapState } from 'src/types/stores/mapStore.interface'
 
-// const initialState: IInitialMapState = {
-// 	tasks: [],
-// 	isLoading: false
-// }
+const initialState: InitialMapState = {
+	selectedCoords: null,
+	pathCoords: null,
+	isLoading: false,
+	error: null
+}
 
-// const tasksReducer = (state = initialState, action: TaskReducerActions): IInitialMapState => {
-// 	switch (action.type) {
-// 		case TasksActions.SET_TASKS:
-// 			return {
-// 				isLoading: false,
-// 				tasks: action.payload
-// 			}
-// 		case TasksActions.SEND_REQUEST:
-// 			return {
-// 				...state,
-// 				isLoading: true
-// 			}
-// 		default:
-// 			return state
-// 	}
-// }
+const mapReducer = (state = initialState, action: MapReducerActions): InitialMapState => {
+	switch (action.type) {
+		case MapActions.SELECT_COORDS:
+			return {
+				...state,
+				selectedCoords: action.payload,
+				isLoading: true
+			}
+		case MapActions.SET_PATH_COORDS:
+			return {
+				...state,
+				pathCoords: action.payload,
+				isLoading: false
+			}
+		case MapActions.SET_ERROR:
+			return {
+				...state,
+				error: action.payload,
+				isLoading: false
+			}
+		default:
+			return state
+	}
+}
 
-// export default tasksReducer
-export {}
+export default mapReducer

@@ -1,0 +1,25 @@
+.map {
+  width: 50%;
+  height: 100%;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.hide-block {
+  position: absolute;
+  z-index: 10000;
+  right: 0;
+  background: rgba(128, 128, 128, 0.733);
+  width: 50vw;
+  height: 100vh;
+}
+
+.error {
+  color: red;
+  font-size: 40px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}

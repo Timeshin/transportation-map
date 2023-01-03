@@ -1,8 +1,8 @@
 import { all, call } from '@redux-saga/core/effects'
-import { crashWatcher, nextWatcher } from './someWatcher'
+import { getPathCoordsWatcher } from './mapSaga'
 
 export default function* rootSaga() {
-	const sagas = [crashWatcher, nextWatcher]
+	const sagas = [getPathCoordsWatcher]
 
 	yield all(sagas.map((saga) => call(saga)))
 }

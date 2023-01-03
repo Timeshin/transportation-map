@@ -1,15 +1,12 @@
-import { useDispatch } from 'react-redux'
+import { MapContainerComponent, MapContent, TableComponent } from 'src/components'
 
-const App = () => {
-	const dispatch = useDispatch()
-
-	return (
-		<div className='App'>
-			<button type='button' onClick={() => dispatch({ type: 'ACTION' })}>
-				Click
-			</button>
-		</div>
-	)
-}
+const App = () => (
+	<div className='wrapper'>
+		<TableComponent />
+		<MapContainerComponent>
+			<MapContent />
+		</MapContainerComponent>
+	</div>
+)
 
 export default App

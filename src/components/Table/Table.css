@@ -1,0 +1,21 @@
+.table {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-table-cell {
+  font-weight: 600;
+}
+
+.ant-table-row {
+  cursor: pointer;
+}
+tr.ant-table-row:hover > td {
+  background: rgba(128, 128, 128, 0.115) !important
+}
+.active_row {
+  background: rgba(128, 128, 128, 0.315)
+}
