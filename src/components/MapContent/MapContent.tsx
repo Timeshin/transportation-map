@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Marker, Polyline, TileLayer, Tooltip, useMap } from 'react-leaflet'
 import { polylinePathOptions } from './Map.meta'
 import { useAppSelector } from 'src/hooks/redux'
-import { selectMapStore, selectPathCoords } from 'src/redux/selectors/selectors'
+import { selectPathCoords } from 'src/redux/selectors/selectors'
 import L from 'leaflet'
 
 L.Icon.Default.mergeOptions({
@@ -12,9 +12,7 @@ L.Icon.Default.mergeOptions({
 })
 
 const MapContent = () => {
-	const mapStore = useAppSelector(selectMapStore)
-	const { selectedCoords } = mapStore
-	const pathCoords = selectPathCoords({ mapStore: mapStore })
+	const { pathCoords, selectedCoords } = useAppSelector(selectPathCoords)
 	const map = useMap()
 
 	useEffect(() => {
